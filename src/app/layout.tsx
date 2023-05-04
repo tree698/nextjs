@@ -1,4 +1,14 @@
 import styles from './layout.module.css';
+import Link from 'next/link';
+import { MetaData } from 'next';
+
+export const metadata: MetaData = {
+  title: '멋진 제품 사이트',
+  description: '멋진 제품을 판매하는 곳입니다.',
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -16,8 +26,9 @@ export default function RootLayout({
         <header className={styles.header}>
           <h1>DEMO Note</h1>
           <nav className={styles.nav}>
-            <a href="">About</a>
-            <a href="">Contact</a>
+            <Link href="/products">Products</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
           </nav>
         </header>
         {children}
